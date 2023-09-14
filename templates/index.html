@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    {% if user|length>0 %}
+        <h1>hello {{user}}</h1>
+        <form method="POST" action="/logout">
+            <button type="submit">Logout</button>
+        </form>
+    {%else%}
+    <h1>Please sign in first!</h1>
+    <button onclick="window.location.replace('/register')">Register</button>
+    <button onclick="window.location.replace('/login')">Login</button>
+    {%endif%}
+    
+    
+</body>
+</html>
